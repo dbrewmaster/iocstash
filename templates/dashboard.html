@@ -1,0 +1,259 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <meta http-equiv="refresh" content="60">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #f2f4f8;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            color: #222;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            margin-bottom: 15px;
+            font-size: 22px;
+            font-weight: 700;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .user-info p {
+            margin: 5px 0;
+        }
+
+        form input[type="file"],
+        form input[type="text"] {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        form button {
+            margin-top: 15px;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        form button:hover {
+            background: #3730a3;
+        }
+
+        a {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background: #f0f0f0;
+            font-weight: 600;
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .pagination a,
+        .pagination span {
+            padding: 8px 16px;
+            background: #e5e7eb;
+            border-radius: 6px;
+            color: #111;
+            text-decoration: none;
+        }
+
+        .pagination a:hover {
+            background: #d1d5db;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Welcome Section -->
+    <div class="card user-info">
+        <h1>Welcome, {{ username }}</h1>
+        <p><strong>First Name:</strong> {{ user_details.first_name }}</p>
+        <p><strong>Last Name:</strong> {{ user_details.last_name }}</p>
+        <p><strong>Address:</strong> {{ user_details.address }}</p>
+        <p><strong>Email:</strong> {{ user_details.email }}</p>
+        <p><strong>Current Time:</strong> {{ current_time }}</p>
+        <br>
+        <a href="{{ url_for('change_password') }}">Change Password</a>
+    </div>
+
+    <!-- Upload Section -->
+    <div class="card">
+        <h2 class="section-title">Upload a File</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+    <!-- IOC Dashboard -->
+    <div class="card">
+        <h2 class="section-title">IOC Dashboard</h2>
+        <p><strong>Total IOCs:</strong> {{ total_iocs }}</p>
+
+        <!-- Search Form -->
+        <h3>Search IOCs by Keyword</h3>
+        <form method="GET" class="search-bar">
+            <input type="text" name="ioc_keyword" placeholder="Enter a keyword..." value="{{ ioc_keyword }}">
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Type Counts -->
+        {% if types_count %}
+            <h3>IOC Type Counts</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>IOC Type</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for t_type, count in types_count %}
+                    <tr>
+                        <td>{{ t_type or 'Unknown' }}</td>
+                        <td>{{ count }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+
+        <!-- Source Counts -->
+        {% if source_counts %}
+            <h3>IOC Source Counts</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Source</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for source, count in source_counts %}
+                    <tr>
+                        <td>{{ source or 'Unknown' }}</td>
+                        <td>{{ count }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+
+        <!-- IOC List -->
+        <h3>IOC List</h3>
+        {% if ioc_list %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Value</th>
+                        <th>Source</th>
+                        <th>Threat Category</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for ioc in ioc_list %}
+                    <tr>
+                        <td>{{ ioc.ioc_type }}</td>
+                        <td>{{ ioc.value }}</td>
+                        <td>{{ ioc.source }}</td>
+                        <td>{{ ioc.threat_category }}</td>
+                        <td>{{ ioc.date }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No IOCs found.</p>
+        {% endif %}
+
+        <!-- Pagination -->
+        <div class="pagination">
+            {% if pagination.has_prev %}
+                <a href="{{ url_for('dashboard', page=pagination.prev_num, ioc_keyword=ioc_keyword) }}">Previous</a>
+            {% endif %}
+            <span>Page {{ pagination.page }} of {{ pagination.pages }}</span>
+            {% if pagination.has_next %}
+                <a href="{{ url_for('dashboard', page=pagination.next_num, ioc_keyword=ioc_keyword) }}">Next</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

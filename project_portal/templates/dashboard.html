@@ -1,0 +1,64 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ username }}</h1>
+    <p>First Name: {{ user_details.first_name }}</p>
+    <p>Last Name: {{ user_details.last_name }}</p>
+    <p>Address: {{ user_details.address }}</p>
+    <p>Email: {{ user_details.email }}</p>
+    <p>Current Time: {{ current_time }}</p>
+
+    <h2>Upload a File</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Upload</button>
+    </form>
+    <br/>
+    <a href="{{ url_for('change_password') }}">Change Password</a>
+
+    <hr>
+    <h2>IOC Dashboard</h2>
+    <p><strong>Total IOCs:</strong> {{ total_iocs }}</p>
+
+    <!-- Search form for IOC keyword -->
+    <h3>Search IOCs by Keyword</h3>
+    <form method="GET" action="">
+        <input type="text" name="ioc_keyword" placeholder="Enter a keyword..." value="{{ ioc_keyword }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Display IOC Type Counts -->
+    {% if types_count %}
+        <h4>IOC Type Counts</h4>
+        <ul>
+        {% for t_type, count in types_count %}
+            <li>{{ t_type }}: {{ count }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    <!-- Display the IOC List -->
+    <h4>IOC List</h4>
+    {% if ioc_list %}
+        <ul>
+        {% for ioc in ioc_list %}
+            <li>
+                <strong>Type:</strong> {{ ioc.ioc_type }}<br>
+                <strong>Value:</strong> {{ ioc.value }}<br>
+                <strong>Source:</strong> {{ ioc.source }}<br>
+                <strong>Threat Category:</strong> {{ ioc.threat_category }}<br>
+                <strong>Date:</strong> {{ ioc.date }}
+            </li>
+            <hr>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No IOCs found.</p>
+    {% endif %}
+</body>
+</html>
