@@ -136,6 +136,10 @@
 </head>
 <body>
 
+<div style="position: fixed; top: 25px; left: 40px; z-index: 999;">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" style="height: 75px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+</div>
+
 <div class="container">
 
     <!-- Welcome Section -->
@@ -148,6 +152,8 @@
         <p><strong>Current Time:</strong> {{ current_time }}</p>
         <br>
         <a href="{{ url_for('change_password') }}">Change Password</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="{{ url_for('logout') }}">Logout</a>
     </div>
 
     <!-- Upload Section -->

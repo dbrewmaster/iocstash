@@ -1,93 +1,112 @@
 <!-- templates/login.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            background: #f0f2f5;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
-            padding: 0;
         }
 
-        .login-container {
+        .login-box {
             background: #fff;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
             width: 350px;
             text-align: center;
         }
 
-        .login-container h2 {
-            margin-bottom: 25px;
-            color: #333;
+        .login-box img.logo {
+            width: 120px;
+            margin-bottom: 20px;
         }
 
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px;
+        .login-box h2 {
+            margin-bottom: 20px;
+        }
+
+        .login-box form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-box input {
             margin-bottom: 15px;
+            padding: 12px;
             border: 1px solid #ccc;
             border-radius: 6px;
-            box-sizing: border-box;
         }
 
-        button[type="submit"] {
-            background: linear-gradient(to right, #74ebd5, #ACB6E5);
-            color: #fff;
-            border: none;
+        .login-box button {
             padding: 12px;
+            background: #4f46e5;
+            color: white;
+            border: none;
             border-radius: 6px;
             cursor: pointer;
-            width: 100%;
             font-size: 16px;
-            transition: 0.3s ease;
         }
 
-        button[type="submit"]:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        .login-box button:hover {
+            background: #3730a3;
         }
 
-        .register-link {
-            margin-top: 15px;
+        .google-btn {
+            margin-top: 10px;
         }
 
-        .register-link a {
-            text-decoration: none;
-            color: #74ebd5;
-            font-weight: bold;
+        hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px solid #ccc;
         }
 
-        .register-link a:hover {
-            text-decoration: underline;
+        .google-signin-img {
+            width: 240px;
+            cursor: pointer;
         }
     </style>
 </head>
-
 <body>
-    <div class="login-container">
-        <h2>User Login</h2>
-        <form method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-        <div class="register-link">
-            <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a></p>
-        </div>
-    </div>
-</body>
 
+<div class="login-box">
+    <!-- App Logo -->
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="App Logo" class="logo">
+
+    <h2>Login</h2>
+
+    <!-- Google Sign-In Button via Flask-Dance -->
+    <div class="google-btn">
+        <a href="{{ url_for('google.login') }}">
+            <img class="google-signin-img"
+                 src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png"
+                 alt="Sign in with Google" />
+        </a>
+    </div>
+
+    <hr>
+
+    <!-- Classic Login -->
+    <form method="POST">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+    </form>
+
+    <p style="margin-top: 15px;">
+        Don't have an account? <a href="{{ url_for('register') }}">Register here</a>
+    </p>
+</div>
+
+</body>
 </html>

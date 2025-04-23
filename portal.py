@@ -1,18 +1,49 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
-from flask_apscheduler import APScheduler  # <-- ADDED for scheduled IOC updates
+from flask_apscheduler import APScheduler
 import os
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.exc import IntegrityError
 import csv
+from google_auth_oauthlib.flow import Flow
+from google.oauth2 import id_token
+from google.auth.transport import requests as grequests
 from sqlalchemy import func
 from datetime import datetime
 import subprocess
+from flask_dance.contrib.google import make_google_blueprint, google
+from flask_dance.consumer import oauth_authorized
+from flask import flash
+from sqlalchemy.orm.exc import NoResultFound
 
 # Initialize the Flask application
 app = Flask(__name__)
+app.config['SESSION_COOKIE_SECURE'] = True
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+
+from flask_dance.contrib.google import make_google_blueprint, google
+
+# Google OAuth Configuration
+app.config["GOOGLE_OAUTH_CLIENT_ID"] = "590471980283-au7aeb65jnq31kdvgksq00eramvfou8d.apps.googleusercontent.com"
+app.config["GOOGLE_OAUTH_CLIENT_SECRET"] = "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"
+
+google_bp = make_google_blueprint(
+    client_id=app.config["GOOGLE_OAUTH_CLIENT_ID"],
+    client_secret=app.config["GOOGLE_OAUTH_CLIENT_SECRET"],
+    scope=[
+        "openid",
+        "https://www.googleapis.com/auth/userinfo.email",
+        "https://www.googleapis.com/auth/userinfo.profile"
+    ],
+    redirect_to="google.authorized",  
+    storage=None
+)
+
+
+app.register_blueprint(google_bp, url_prefix="/login")
+
 
 # Secret key for session management
 app.secret_key = 'your_secret_key'
@@ -115,6 +146,10 @@ def update_ioc(csv_filepath='iocs_combined.csv'):
 # Routes
 @app.route('/', methods=['GET', 'POST'])
 def login():
+    # Redirect to dashboard if already logged in
+    if 'username' in session:
+        return redirect(url_for('dashboard'))
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -127,6 +162,7 @@ def login():
             return redirect(url_for('dashboard'))
         else:
             return "Invalid Credentials", 401
+
     return render_template('login.html')
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -232,6 +268,64 @@ def change_password():
 
     return render_template('change_password.html')
 
+@oauth_authorized.connect_via(google_bp)
+def google_logged_in(blueprint, token):
+    if not token:
+        flash("Failed to log in with Google.", category="error")
+        return False
+
+    resp = blueprint.session.get("/oauth2/v2/userinfo")
+    if not resp.ok:
+        flash("Failed to fetch user info from Google.", category="error")
+        return False
+
+    user_info = resp.json()
+    email = user_info.get("email")
+    if not email:
+        flash("Email not available from Google.", category="error")
+        return False
+
+    user = User.query.filter_by(email=email).first()
+    if user:
+        session["username"] = user.username
+        subprocess.run(["python", "threat.py"])
+        update_ioc()
+        return redirect(url_for("dashboard"))
+
+    # NEW USER → Redirect to complete-profile
+    session["pending_email"] = email
+    session["pending_username"] = email.split("@")[0]
+    return redirect(url_for("complete_profile"))
+
+
+@app.route('/complete-profile', methods=['GET', 'POST'])
+def complete_profile():
+    if 'pending_email' not in session or 'pending_username' not in session:
+        return redirect(url_for('login'))
+
+    if request.method == 'POST':
+        new_user = User(
+            username=session["pending_username"],
+            password=generate_password_hash("oauth_login"),
+            email=session["pending_email"],
+            first_name=request.form['first_name'],
+            last_name=request.form['last_name'],
+            address=request.form['address']
+        )
+        db.session.add(new_user)
+        db.session.commit()
+
+        session['username'] = new_user.username
+        session.pop("pending_email", None)
+        session.pop("pending_username", None)
+
+        subprocess.run(["python", "threat.py"])
+        update_ioc()
+        return redirect(url_for("dashboard"))
+
+    return render_template("complete.html")
+
+
 def send_email(recipient, filepath):
     with app.app_context():
         msg = Message('File Upload Notification', sender=app.config['MAIL_USERNAME'], recipients=[recipient])
@@ -239,6 +333,27 @@ def send_email(recipient, filepath):
         with open(filepath, 'rb') as f:
             msg.attach(os.path.basename(filepath), 'application/octet-stream', f.read())
         mail.send(msg)
+
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('login'))
+
+
+@app.before_request
+def require_login():
+    allowed_routes = ['login', 'register', 'static', 'google.login', 'google.authorized', 'complete_profile']
+
+    if request.endpoint and (
+        request.endpoint.startswith('google.') or
+        request.endpoint in allowed_routes
+    ):
+        return
+
+    if 'username' not in session:
+        return redirect(url_for('login'))
+
 
 if __name__ == '__main__':
     os.makedirs('uploads', exist_ok=True)

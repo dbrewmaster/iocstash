@@ -1,4 +1,5 @@
 import requests
+import time
 import csv
 
 filename = "iocs_combined.csv"
@@ -202,7 +203,9 @@ fetch_feodo()
 fetch_malwarebazaar()
 fetch_openphish()
 fetch_greynoise()
+time.sleep(5)
 fetch_urlscan()
+time.sleep(5)
 # fetch_shodan_info()
 
 # Save to CSV
