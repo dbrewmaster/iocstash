@@ -473,13 +473,25 @@ ip:port,128.90.106.191:2000,ThreatFox API,botnet_cc,2025-04-22 20:01:19 UTC
 ip:port,128.90.106.191:4000,ThreatFox API,botnet_cc,2025-04-22 20:01:19 UTC
 ip:port,101.43.131.215:443,ThreatFox API,botnet_cc,2025-04-22 20:00:53 UTC
 ip:port,107.148.149.107:3013,ThreatFox API,botnet_cc,2025-04-22 20:00:43 UTC
+URL,http://188.19.145.67:41921/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:35:05
+URL,http://197.206.42.237:37263/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:32:11
+URL,http://120.37.206.144:49771/bin.sh,URLHaus,"32-bit,arm,elf,mirai,Mozi",2025-04-23 19:29:05
+URL,http://119.187.232.210:38718/i,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:29:04
+URL,http://114.227.52.179:44052/i,URLHaus,"32-bit,arm,elf,mirai,Mozi",2025-04-23 19:29:04
+URL,http://27.215.177.65:33932/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:25:05
+URL,http://216.129.183.90:59113/i,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:22:05
+URL,http://36.163.57.154:38326/i,URLHaus,"32-bit,arm,elf,mirai,Mozi",2025-04-23 19:21:05
+URL,http://39.90.145.175:38491/i,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:20:05
+URL,http://222.141.44.126:44922/i,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:17:05
+URL,http://221.15.15.251:52189/i,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:14:05
+URL,http://99.44.244.233:60437/i,URLHaus,"32-bit,arm,elf,mirai,Mozi",2025-04-23 19:14:05
 URL,http://119.187.232.210:38718/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:10:08
-URL,http://113.5.212.190:45827/i,URLHaus,"32-bit,arm,elf,Mozi",2025-04-23 19:09:04
-URL,http://114.227.52.179:44052/bin.sh,URLHaus,"32-bit,arm,elf,Mozi",2025-04-23 19:06:06
-URL,http://36.163.57.154:38326/bin.sh,URLHaus,"32-bit,arm,elf,Mozi",2025-04-23 19:03:05
+URL,http://113.5.212.190:45827/i,URLHaus,"32-bit,arm,elf,mirai,Mozi",2025-04-23 19:09:04
+URL,http://114.227.52.179:44052/bin.sh,URLHaus,"32-bit,arm,elf,mirai,Mozi",2025-04-23 19:06:06
+URL,http://36.163.57.154:38326/bin.sh,URLHaus,"32-bit,arm,elf,mirai,Mozi",2025-04-23 19:03:05
 URL,http://117.209.124.186:54433/i,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:03:04
 URL,https://u1.electivewielder.digital/2ct8aql7w0.xi,URLHaus,ClearFake,2025-04-23 19:02:03
-URL,http://14.153.208.138:36780/bin.sh,URLHaus,"32-bit,arm,elf,Mozi",2025-04-23 19:01:08
+URL,http://14.153.208.138:36780/bin.sh,URLHaus,"32-bit,arm,elf,mirai,Mozi",2025-04-23 19:01:08
 URL,http://182.84.139.233:45482/i,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:00:06
 URL,http://216.129.183.90:59113/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 18:58:05
 URL,http://117.241.122.15:33791/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 18:56:04
