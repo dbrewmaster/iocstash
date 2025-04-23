@@ -473,6 +473,9 @@ ip:port,128.90.106.191:2000,ThreatFox API,botnet_cc,2025-04-22 20:01:19 UTC
 ip:port,128.90.106.191:4000,ThreatFox API,botnet_cc,2025-04-22 20:01:19 UTC
 ip:port,101.43.131.215:443,ThreatFox API,botnet_cc,2025-04-22 20:00:53 UTC
 ip:port,107.148.149.107:3013,ThreatFox API,botnet_cc,2025-04-22 20:00:43 UTC
+URL,http://119.187.232.210:38718/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:10:08
+URL,http://113.5.212.190:45827/i,URLHaus,"32-bit,arm,elf,Mozi",2025-04-23 19:09:04
+URL,http://114.227.52.179:44052/bin.sh,URLHaus,"32-bit,arm,elf,Mozi",2025-04-23 19:06:06
 URL,http://36.163.57.154:38326/bin.sh,URLHaus,"32-bit,arm,elf,Mozi",2025-04-23 19:03:05
 URL,http://117.209.124.186:54433/i,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:03:04
 URL,https://u1.electivewielder.digital/2ct8aql7w0.xi,URLHaus,ClearFake,2025-04-23 19:02:03
@@ -35517,6 +35520,41 @@ URL,http://112.226.169.44:64413/i,URLHaus,"32-bit,elf,mips,Mozi",2025-03-24 00:0
 IP,109.172.92.205,Feodo Tracker,Botnet C2,N/A
 IP,149.28.156.183,Feodo Tracker,Botnet C2,N/A
 IP,162.243.103.246,Feodo Tracker,Botnet C2,N/A
+Hash,181bc7ab7164f9ffb090845fd69f9cbd79a6bc335e0d54ee39098b629daca61f,MalwareBazaar,Malware,N/A
+Hash,a7cfffb9dda12c83b711396472d7c658bee731cd255802dfdf921f37255903c1,MalwareBazaar,Malware,N/A
+Hash,251a07e58f9405b3905d89a4aaea9de59dee4728eada489e8313f5f154a929a7,MalwareBazaar,Malware,N/A
+Hash,ef6b6000acfbd7e160c93aca20f5b503ba9b0f166b781e721286e57e7269a84f,MalwareBazaar,Malware,N/A
+Hash,ab0bed2d9d52ce8e50051bb3af7398ff426df363f2d5e5d8fe632593a1b6a160,MalwareBazaar,Malware,N/A
+Hash,ff8494139e3634b97562a336e6f6c481f8c1bb8857e943ba6ed210cafa9b97b6,MalwareBazaar,Malware,N/A
+Hash,ea4dfcdcd3ee9177df73dea9cd2de62d68d12bbe8dac4c4566862db698d3813a,MalwareBazaar,Malware,N/A
+Hash,f7190566d569c8ae5682c0cf3bff545e71c62cc4b37559e7f08f802d09ab1ec0,MalwareBazaar,Malware,N/A
+Hash,3ba3ecebd4c0d194fa9c82fb57c2a6ba0589ab4e6ccb1158df05fb30ef2ec3cc,MalwareBazaar,Malware,N/A
+Hash,7f4e3c3a8d92386bf0d727b49e212dcc6ba5f68fdc58e362e85a9005881aab64,MalwareBazaar,Malware,N/A
+Hash,d6d1296a9ef5e494075cc3a9e677af1895ee5eab03376da0063e330bd8f219bd,MalwareBazaar,Malware,N/A
+Hash,73c7459f7ca20de85b69d2c7aa6087ef3cdaf8e63bb29ac085ed43853e3a4924,MalwareBazaar,Malware,N/A
+Hash,b0c9521a1f8b237e1c43e15d1f4d5590c58199a5df359b6b3a9c1a06669c26d7,MalwareBazaar,Malware,N/A
+Hash,a5e902649560d8aa8823b5b2d9a9170ce8486474ae7715bf6ef3855e1f8791e8,MalwareBazaar,Malware,N/A
+Hash,cd9fbd3f79e9929b3ca838d79e57b1aebdafd62f7fbd9e622e2f934b9aa83297,MalwareBazaar,Malware,N/A
+Hash,e202cbda21fcb830caa22666875cdebef5a2ca404a99751da60dbc1e243b7ccc,MalwareBazaar,Malware,N/A
+Hash,d481bf5c7614fb84c2ece90f6fcb3b7d3d5265814e2375efa8fe5343e8d1fd16,MalwareBazaar,Malware,N/A
+Hash,d4bb61c3cd22b3573981bd10b87f31d50c6299d7ed3ff473f5eec6d593aabf78,MalwareBazaar,Malware,N/A
+Hash,2c1b7ac7abf18b7128d05c6e0c5feaa2d0d6abef1e246d31a8e4fde74a6e659f,MalwareBazaar,Malware,N/A
+Hash,2bc5116b0dda3f688654ad3bef80f318bbf2ccc32606b233d54c6e2e5185ab79,MalwareBazaar,Malware,N/A
+Hash,b6d0c02f543083cae2b0ddad3ee92cdae983b99c19228f6f367a4bfca14a10bd,MalwareBazaar,Malware,N/A
+Hash,d6b23cf9b54604654590dd75326ac07da052dd6cf23e1242b5f4014bf906aae0,MalwareBazaar,Malware,N/A
+Hash,948ea22154ee7317baaf0e1ec07ce5193c7edaed53b46c62e8c8917e434f3b67,MalwareBazaar,Malware,N/A
+Hash,e695fd7d3c98065f3460381c772a2dfa246f327de233ac20c3d9dbde505ac419,MalwareBazaar,Malware,N/A
+Hash,02205fed91411bc8361385c45f2732cd575dbb44d3221206581a37477574c36e,MalwareBazaar,Malware,N/A
+Hash,a86601cadb8539d5ed449264f592517ec8fe7d0bf860265a5a68a4ccc4c19223,MalwareBazaar,Malware,N/A
+Hash,b95e4b6a76ba9ed149a945c90d5d6e8b35a9c8b3e76a8f05b394dde8e99ea7ef,MalwareBazaar,Malware,N/A
+Hash,cb584a4faa3cbf7e45b503710f3d60ea9a5a5767f56a63a64ce39fb52a6718df,MalwareBazaar,Malware,N/A
+Hash,11ccc488ef7196af7ce30fea721a38767bc9e15ecf79baad27f4e6ae507d66b5,MalwareBazaar,Malware,N/A
+Hash,f1bc762a4fe42958cdd16248e28e4b709a4fec3cb6c525449c288254f58ce088,MalwareBazaar,Malware,N/A
+Hash,51807be371d8967d084a2393dd93c0b43ccf4b79f7d575b020e3fe07466795af,MalwareBazaar,Malware,N/A
+Hash,fc63db22c5376b6487fce373898982132169882b5b937c3ed77c092efa59869f,MalwareBazaar,Malware,N/A
+Hash,b5ecd11ab914376124856516dcca3360753ccd8ceeafa6557e12014d48ddb393,MalwareBazaar,Malware,N/A
+Hash,fb4d8276ab2f02bf34ef83dbfda84e5a5a9a3881d72bdb37e289547498e61afe,MalwareBazaar,Malware,N/A
+Hash,d905d45fe2a3bb011bd2b51fcb29135493c01895df288f0f4f60decfaa4d2d9e,MalwareBazaar,Malware,N/A
 Hash,810c5686e4647ef5b688d185c1d7f1e52e18809f2b17282384084f847b4f086f,MalwareBazaar,Malware,N/A
 Hash,b40e66fb3cf48d9ddbad2a98eff614da3be5cf83f3272130332ad90583c0eacb,MalwareBazaar,Malware,N/A
 Hash,bd3693b6677646871a5739e30bb1abbb8d168cdf43695bf23f0100a3309ee2d2,MalwareBazaar,Malware,N/A
@@ -35550,6 +35588,7 @@ Hash,590609d4d8325041be024bfe76075059c08384ea66d8b72e4958ac8f1abcef3e,MalwareBaz
 Hash,a71e89baa2ea71f50787d517cadd8956a7b3805706fcb82647b1be53a66c8874,MalwareBazaar,Malware,N/A
 Hash,af0630548aba247f1badd56ad5456c15c0db9baea492d558ef48ff03305f30f4,MalwareBazaar,Malware,N/A
 Hash,15f2db52b84b045996171563eadb0318a93a336d83d8b55b802ba2025779b8ff,MalwareBazaar,Malware,N/A
+Hash,2817e26773a18ea6185fa22ab0060338e227b97d4eb3f7b65921f00805fb6120,MalwareBazaar,Malware,N/A
 Hash,5eaaf8af492b74fe6aefc76879fefa86f221e369cc242600e5f36f9267a75d65,MalwareBazaar,Malware,N/A
 Hash,687cbecf206698718fbfbd01faa67f18595f2f668dfa07846f5c3024532ad8f7,MalwareBazaar,Malware,N/A
 Hash,ea4a138dfd4305d607a306d7ac1666aab2e584f765030e7101f3255d9f2e5d4e,MalwareBazaar,Malware,N/A
@@ -35595,7 +35634,9 @@ Hash,b5c3c2778cc5501f0c069760375f772948672c3a48720eeee7e6b12db6c0dca7,MalwareBaz
 Hash,9afda2db0b064bf9188b94f84db3438f1728d2122f732a3ea3e100e4fb5a53d7,MalwareBazaar,Malware,N/A
 Hash,ac7c2c9e9c8ec92fc4c996b67203f2a5b14fb54d6783dcd8e846f956af004c44,MalwareBazaar,Malware,N/A
 Hash,997e8267465dc734b1f1ad4cf0b6f724cfaf73019d08713a06c146e705b8ac78,MalwareBazaar,Malware,N/A
+Hash,9e85b7f608a0f9831a09caa4db660e48a53804892cef1a56b70fa04db27241ef,MalwareBazaar,Malware,N/A
 Hash,906522531a0ff1d2d41b2beb95add917b2760836ee997155534301502122a89d,MalwareBazaar,Malware,N/A
+Hash,b4e7ddb8fc066f23134e52c3eb826a8fd128532a0cdb3710afbb690c8be36d81,MalwareBazaar,Malware,N/A
 Hash,12362bc5540a6555344de62fcf224b0cb82990321e676d55b4ec0dfa0f7a50f0,MalwareBazaar,Malware,N/A
 Hash,3b479fb35c9d2a4fb03e9430af9855fe74193a023da3721fe333cf01eb180c47,MalwareBazaar,Malware,N/A
 Hash,f960e2cd72231865d2fe6d339b88717b64e1701c79e4bee132909fd1019ec1a3,MalwareBazaar,Malware,N/A
@@ -35613,6 +35654,7 @@ Hash,6c3c65ec59e1fe33db808e362b9a58335bfa9d375c4b9e717f6c95dcba725f82,MalwareBaz
 Hash,34baff5caafb0fd81416a57eaa50358a0d55fdb2ab820081c526f1c7145ae10d,MalwareBazaar,Malware,N/A
 Hash,b2ac1b632bda002acb632a28950aec8a9538a643372d1e7a6841a5ffc2f3e705,MalwareBazaar,Malware,N/A
 Hash,59ed78a9cd9afbcc23246f108ba3ce26e8695b6fd0a655c7b12cf4508e2c221b,MalwareBazaar,Malware,N/A
+Hash,1d91703262a9bc1e639c7d666394281e8a7c827266624379a2ad16d7a52b3881,MalwareBazaar,Malware,N/A
 Hash,22cedf0b76d220a3aef64c3e73edda73639aed371909043e5662d0e77887d6bb,MalwareBazaar,Malware,N/A
 Hash,2a663990a4e2540177fe2d048892112c19a73f26fe67bfa9d405fd54102213af,MalwareBazaar,Malware,N/A
 Hash,2b7cb84fc2ee91dab65a2e2768e251acca569162b9e4e1974b3c366c52213277,MalwareBazaar,Malware,N/A
@@ -36656,13 +36698,3 @@ Hash,5212ff47bdf76ebc24802cbc65843a4c9e2ae549ef8fd1c6e18bcff236e58279,MalwareBaz
 Hash,e9b1b9c9591493551575e756f79938d868d3067eb733166a85896232205cc6bb,MalwareBazaar,Malware,N/A
 Hash,ce34d8d206d8626145030c37277dc1193fb5fdb085fe406c8f05110c00b3896e,MalwareBazaar,Malware,N/A
 Hash,a260a8d525f3878dda593cac457e297c74cd8f401ff2fc075711c33705129d62,MalwareBazaar,Malware,N/A
-Hash,1b1ec26d4476b1836d8610f6ce8211b204f50ad482e10ac3812d1647cc64cd7c,MalwareBazaar,Malware,N/A
-Hash,3a23ba54984c906f7bc454d261a2f1862282871c8ede2606f5cc97a7c4b6d7a7,MalwareBazaar,Malware,N/A
-Hash,e8fa8a22863501d27fcf3fd37e03138ab27fcad70dc0ce16b46acf34b07c4bba,MalwareBazaar,Malware,N/A
-Hash,d3d7d11ce68d09f9ac581a216b6978d75c88c26e8ea9fdfc5312dd11a058ef30,MalwareBazaar,Malware,N/A
-Hash,8e09641a82bc73f7a36cdd4fc317b30afa8c63be904626b126e9aceb85a46698,MalwareBazaar,Malware,N/A
-Hash,23d5a7f4e5725f185f001b147d0d9b72c93b0c56b8e92f6f23dc8b42469df929,MalwareBazaar,Malware,N/A
-Hash,44efe5f1eb68b2c3a80c856279241de9657057367a766eca65ae07f9fc32e0ce,MalwareBazaar,Malware,N/A
-Hash,d82af63f4acf07ac8cad61847a97d0e9e5ff6dd02c218acc2edf8a1d8f428516,MalwareBazaar,Malware,N/A
-Hash,d49f1ffa74ae44c897c6e75aed6d2008d57e1403f07e213e9490895370c3c182,MalwareBazaar,Malware,N/A
-Hash,2b7397a668f626b97ce9643ae5fe31fd3d53194ccb25131472340106c33db8c7,MalwareBazaar,Malware,N/A
