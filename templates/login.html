@@ -3,48 +3,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Login - DataBrew Labs</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
-            background: #f0f2f5;
+            background: linear-gradient(to right, #eef2f3, #8e9eab);
+            margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
         }
 
         .login-box {
-            background: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            width: 350px;
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 15px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            width: 400px;
             text-align: center;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .login-box img.logo {
-            width: 120px;
-            margin-bottom: 20px;
+            width: 140px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .login-box h2 {
-            margin-bottom: 20px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .google-btn {
+            margin-bottom: 25px;
+        }
+
+        .google-signin-img {
+            width: 250px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .google-signin-img:hover {
+            transform: scale(1.05);
         }
 
         .login-box form {
             display: flex;
             flex-direction: column;
+            gap: 15px;
         }
 
         .login-box input {
-            margin-bottom: 15px;
             padding: 12px;
             border: 1px solid #ccc;
-            border-radius: 6px;
+            border-radius: 8px;
+            font-size: 15px;
         }
 
         .login-box button {
@@ -52,40 +81,39 @@
             background: #4f46e5;
             color: white;
             border: none;
-            border-radius: 6px;
-            cursor: pointer;
+            border-radius: 8px;
             font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
         }
 
         .login-box button:hover {
             background: #3730a3;
         }
 
-        .google-btn {
-            margin-top: 10px;
+        p {
+            margin-top: 20px;
+            font-size: 14px;
         }
 
-        hr {
-            margin: 20px 0;
-            border: none;
-            border-top: 1px solid #ccc;
+        a {
+            color: #4f46e5;
+            font-weight: bold;
+            text-decoration: none;
         }
 
-        .google-signin-img {
-            width: 240px;
-            cursor: pointer;
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
 <div class="login-box">
-    <!-- App Logo -->
     <img src="{{ url_for('static', filename='logo.png') }}" alt="App Logo" class="logo">
-
     <h2>Login</h2>
 
-    <!-- Google Sign-In Button via Flask-Dance -->
     <div class="google-btn">
         <a href="{{ url_for('google.login') }}">
             <img class="google-signin-img"
@@ -94,19 +122,15 @@
         </a>
     </div>
 
-    <hr>
-
-    <!-- Classic Login -->
     <form method="POST">
         <input type="text" name="username" placeholder="Username" required />
         <input type="password" name="password" placeholder="Password" required />
         <button type="submit">Login</button>
     </form>
 
-    <p style="margin-top: 15px;">
-        Don't have an account? <a href="{{ url_for('register') }}">Register here</a>
-    </p>
+    <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a></p>
 </div>
 
 </body>
 </html>
+

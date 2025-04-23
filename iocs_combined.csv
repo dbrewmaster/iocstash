@@ -1,4 +1,52 @@
 Type,Value,Source,Threat_Category,Date
+sha256_hash,93d38e4cadaba09d904c7aae90763e8ae3ae76a10a81ee331a365d78b7b123bf,ThreatFox API,payload,2025-04-23 20:12:34 UTC
+sha256_hash,7ad9ed23a91643b517e82ad5740d24eca16bcae21cfe1c0da78ee80e0d1d3f02,ThreatFox API,payload,2025-04-23 20:10:07 UTC
+sha256_hash,afa620a74f7689af08e95b979f763260d327e8dd99822e983169d2ce7358e9ae,ThreatFox API,payload,2025-04-23 20:07:47 UTC
+url,http://twizt.net,ThreatFox API,botnet_cc,2025-04-23 20:02:25 UTC
+sha256_hash,2f16aaee07be96aadaad389ef9fd1f7c3b41352ddafc3ddd4396b1a065e6e5c7,ThreatFox API,payload,2025-04-23 20:02:25 UTC
+ip:port,194.233.76.207:443,ThreatFox API,botnet_cc,2025-04-23 20:01:57 UTC
+ip:port,191.96.235.70:80,ThreatFox API,botnet_cc,2025-04-23 20:01:56 UTC
+ip:port,52.69.244.101:80,ThreatFox API,botnet_cc,2025-04-23 20:01:47 UTC
+ip:port,54.250.0.227:80,ThreatFox API,botnet_cc,2025-04-23 20:01:46 UTC
+ip:port,18.199.99.219:42969,ThreatFox API,botnet_cc,2025-04-23 20:01:45 UTC
+domain,relyheins.org,ThreatFox API,botnet_cc,2025-04-23 20:01:33 UTC
+ip:port,65.38.121.128:7443,ThreatFox API,botnet_cc,2025-04-23 20:01:32 UTC
+ip:port,164.92.184.73:7443,ThreatFox API,botnet_cc,2025-04-23 20:01:32 UTC
+ip:port,164.90.180.58:7443,ThreatFox API,botnet_cc,2025-04-23 20:01:31 UTC
+ip:port,143.110.213.30:7443,ThreatFox API,botnet_cc,2025-04-23 20:01:31 UTC
+ip:port,51.175.8.79:4444,ThreatFox API,botnet_cc,2025-04-23 20:01:25 UTC
+ip:port,154.37.213.163:8888,ThreatFox API,botnet_cc,2025-04-23 20:01:24 UTC
+ip:port,172.245.25.184:2404,ThreatFox API,botnet_cc,2025-04-23 20:00:56 UTC
+ip:port,173.214.166.105:4352,ThreatFox API,botnet_cc,2025-04-23 20:00:56 UTC
+ip:port,107.175.32.184:2405,ThreatFox API,botnet_cc,2025-04-23 20:00:55 UTC
+ip:port,107.174.65.156:2404,ThreatFox API,botnet_cc,2025-04-23 20:00:55 UTC
+ip:port,192.142.0.149:443,ThreatFox API,botnet_cc,2025-04-23 20:00:55 UTC
+ip:port,175.27.137.222:888,ThreatFox API,botnet_cc,2025-04-23 20:00:39 UTC
+ip:port,119.8.108.74:443,ThreatFox API,botnet_cc,2025-04-23 20:00:38 UTC
+ip:port,124.71.139.142:80,ThreatFox API,botnet_cc,2025-04-23 20:00:36 UTC
+ip:port,120.46.16.37:1144,ThreatFox API,botnet_cc,2025-04-23 20:00:36 UTC
+ip:port,31.58.136.13:443,ThreatFox API,botnet_cc,2025-04-23 20:00:34 UTC
+ip:port,121.37.217.210:8443,ThreatFox API,botnet_cc,2025-04-23 20:00:34 UTC
+ip:port,77.110.116.47:443,ThreatFox API,botnet_cc,2025-04-23 20:00:33 UTC
+ip:port,77.110.116.47:80,ThreatFox API,botnet_cc,2025-04-23 20:00:33 UTC
+url,https://setecores.com.br/wp-content/plugins/resads/mfls.php?id=z8GvGX523Ii0Amyem9qW,ThreatFox API,payload_delivery,2025-04-23 19:59:23 UTC
+url,https://emblemat.com/moszna/wp-content/plugins/resads/mfls.php?id=Z3m8aDdGyDQo8TnqIyri,ThreatFox API,payload_delivery,2025-04-23 19:59:22 UTC
+url,https://www.wearerescue.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.wearerescue.com%2Fwp-content%2Fplugins%2Fresads%2Fmfls.php%3Fid%3DqwSPUwLH23Twhnr6FMpI&bp-auth=1&action=bpnoaccess,ThreatFox API,payload_delivery,2025-04-23 19:59:22 UTC
+url,https://atrandu.lt/wp-content/plugins/wp-automatic/pwlbdv.php?gdqg=q32e,ThreatFox API,payload_delivery,2025-04-23 19:59:21 UTC
+url,https://crushingthehairbiz.com/wp-content/plugins/wp-automatic/dwyrnb.php?dpf=1kw5q,ThreatFox API,payload_delivery,2025-04-23 19:59:21 UTC
+domain,fastylamberta.click,ThreatFox API,payload_delivery,2025-04-23 19:58:50 UTC
+domain,react.webaudiomessages.xyz,ThreatFox API,payload_delivery,2025-04-23 19:58:50 UTC
+domain,walkinsonbeer.click,ThreatFox API,payload_delivery,2025-04-23 19:58:50 UTC
+domain,dealmakerwealthsociety.com,ThreatFox API,payload_delivery,2025-04-23 19:58:49 UTC
+domain,www.experiture.com,ThreatFox API,payload_delivery,2025-04-23 19:58:49 UTC
+domain,www.keycoopt.com,ThreatFox API,payload_delivery,2025-04-23 19:58:49 UTC
+domain,id.webaudiomessages.xyz,ThreatFox API,payload_delivery,2025-04-23 19:58:49 UTC
+domain,mansionsnowy.click,ThreatFox API,payload_delivery,2025-04-23 19:58:49 UTC
+domain,outlook.webaudiomessages.xyz,ThreatFox API,payload_delivery,2025-04-23 19:58:49 UTC
+domain,airbluefootgear.com,ThreatFox API,payload_delivery,2025-04-23 19:58:49 UTC
+sha256_hash,088cf60b3630da9d0b4fa437bfa7b8c6f589262ccfd025dc229be818709dfada,ThreatFox API,payload,2025-04-23 19:57:53 UTC
+domain,tycok.icu,ThreatFox API,payload_delivery,2025-04-23 19:52:15 UTC
+domain,iguanadx.run,ThreatFox API,botnet_cc,2025-04-23 19:43:00 UTC
 ip:port,193.161.193.99:56152,ThreatFox API,botnet_cc,2025-04-23 19:01:53 UTC
 url,https://mrdltd.com/5q2g.js,ThreatFox API,payload_delivery,2025-04-23 18:46:57 UTC
 domain,mrdltd.com,ThreatFox API,payload_delivery,2025-04-23 18:46:24 UTC
@@ -458,21 +506,25 @@ ip:port,43.131.5.83:8888,ThreatFox API,botnet_cc,2025-04-22 20:50:57 UTC
 ip:port,35.86.80.194:8081,ThreatFox API,botnet_cc,2025-04-22 20:50:32 UTC
 ip:port,188.234.232.119:443,ThreatFox API,botnet_cc,2025-04-22 20:47:53 UTC
 ip:port,159.65.52.75:443,ThreatFox API,botnet_cc,2025-04-22 20:45:51 UTC
-ip:port,54.169.225.216:80,ThreatFox API,botnet_cc,2025-04-22 20:02:17 UTC
-ip:port,159.65.91.137:7443,ThreatFox API,botnet_cc,2025-04-22 20:01:46 UTC
-ip:port,116.2.176.204:7443,ThreatFox API,botnet_cc,2025-04-22 20:01:46 UTC
-ip:port,15.206.170.157:2454,ThreatFox API,botnet_cc,2025-04-22 20:01:43 UTC
-ip:port,34.243.214.249:1961,ThreatFox API,botnet_cc,2025-04-22 20:01:42 UTC
-ip:port,115.74.25.138:6000,ThreatFox API,botnet_cc,2025-04-22 20:01:39 UTC
-ip:port,115.74.25.138:6001,ThreatFox API,botnet_cc,2025-04-22 20:01:39 UTC
-ip:port,111.229.202.115:8443,ThreatFox API,botnet_cc,2025-04-22 20:01:37 UTC
-ip:port,174.113.20.53:9601,ThreatFox API,botnet_cc,2025-04-22 20:01:26 UTC
-ip:port,38.132.122.213:7443,ThreatFox API,botnet_cc,2025-04-22 20:01:26 UTC
-ip:port,38.132.122.214:7443,ThreatFox API,botnet_cc,2025-04-22 20:01:25 UTC
-ip:port,128.90.106.191:2000,ThreatFox API,botnet_cc,2025-04-22 20:01:19 UTC
-ip:port,128.90.106.191:4000,ThreatFox API,botnet_cc,2025-04-22 20:01:19 UTC
-ip:port,101.43.131.215:443,ThreatFox API,botnet_cc,2025-04-22 20:00:53 UTC
-ip:port,107.148.149.107:3013,ThreatFox API,botnet_cc,2025-04-22 20:00:43 UTC
+URL,http://182.127.112.163:43814/i,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 20:09:05
+URL,http://103.130.107.83:59761/i,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 20:09:05
+URL,https://www.ishimotors.com/profileLayout,URLHaus,SocGholish,2025-04-23 20:08:05
+URL,http://223.151.75.62:47212/bin.sh,URLHaus,"32-bit,arm,elf,Mozi",2025-04-23 20:06:04
+URL,http://112.242.50.122:38001/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 20:04:21
+URL,http://59.93.187.61:58483/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 20:03:06
+URL,http://76.72.238.224:57536/i,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 20:03:06
+URL,https://u1.electivewielder.digital/vxjyfqz1z2.xi,URLHaus,ClearFake,2025-04-23 20:02:03
+URL,http://138.204.196.254:33383/i,URLHaus,"32-bit,arm,elf,mirai,Mozi",2025-04-23 19:59:06
+URL,http://222.137.106.77:45231/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:59:05
+URL,https://tycok.icu/,URLHaus,ClearFake,2025-04-23 19:56:03
+URL,http://120.37.206.144:49771/i,URLHaus,"32-bit,arm,elf,mirai,Mozi",2025-04-23 19:53:13
+URL,http://197.206.42.237:37263/i,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:52:05
+URL,http://27.215.177.65:33932/i,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:46:05
+URL,http://117.209.121.220:60303/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:44:06
+URL,http://182.127.112.163:43814/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:41:06
+URL,http://76.72.238.224:57536/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:40:09
+URL,http://138.204.196.254:33383/bin.sh,URLHaus,"32-bit,arm,elf,mirai,Mozi",2025-04-23 19:38:06
+URL,http://42.226.238.107:39243/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:36:05
 URL,http://188.19.145.67:41921/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:35:05
 URL,http://197.206.42.237:37263/bin.sh,URLHaus,"32-bit,elf,mips,Mozi",2025-04-23 19:32:11
 URL,http://120.37.206.144:49771/bin.sh,URLHaus,"32-bit,arm,elf,mirai,Mozi",2025-04-23 19:29:05
@@ -35532,6 +35584,16 @@ URL,http://112.226.169.44:64413/i,URLHaus,"32-bit,elf,mips,Mozi",2025-03-24 00:0
 IP,109.172.92.205,Feodo Tracker,Botnet C2,N/A
 IP,149.28.156.183,Feodo Tracker,Botnet C2,N/A
 IP,162.243.103.246,Feodo Tracker,Botnet C2,N/A
+Hash,3df23968af621171f8047022a9b8139f365c8712ace1fa523cedbaaa95f3a297,MalwareBazaar,Malware,N/A
+Hash,d7460547193568eda4c0d2844a7bbce8e726f68c1239bae16dd9742885b6c984,MalwareBazaar,Malware,N/A
+Hash,02a20b2af08bf6cad734e24c1ecf6283d6d9af4cef9b31fa2a5f0444388288a1,MalwareBazaar,Malware,N/A
+Hash,5169e8a5eb83d8a1d97a1f487c4213afb4b05181dab24a703cc6078998adc43d,MalwareBazaar,Malware,N/A
+Hash,85eb3041d52eb735c82cd60b3a9fb25d404de4abdf04fa920c81ba400032e881,MalwareBazaar,Malware,N/A
+Hash,98bb45430d9894664ddb9226ef2e8fdf265025417eb4c9dca42bd3f4a676f464,MalwareBazaar,Malware,N/A
+Hash,a33e3f0529669e831242a1d8d9d254a6db4ab7c2a679f6a2fb65f4f012eae1ab,MalwareBazaar,Malware,N/A
+Hash,47aa97402c038aa25f04eda2d712dfeee2f1dbe12547129169ea1ed13247fda6,MalwareBazaar,Malware,N/A
+Hash,aee9ae88857d57d8cbbc17f1adff7c51443d0d5fcee2bef3689408c5dfa659df,MalwareBazaar,Malware,N/A
+Hash,fa409ce0b9fb2cf36110c04a34ce4d568d0ebccf9a0a030fca83f7ad3d9116e7,MalwareBazaar,Malware,N/A
 Hash,181bc7ab7164f9ffb090845fd69f9cbd79a6bc335e0d54ee39098b629daca61f,MalwareBazaar,Malware,N/A
 Hash,a7cfffb9dda12c83b711396472d7c658bee731cd255802dfdf921f37255903c1,MalwareBazaar,Malware,N/A
 Hash,251a07e58f9405b3905d89a4aaea9de59dee4728eada489e8313f5f154a929a7,MalwareBazaar,Malware,N/A
@@ -36690,23 +36752,3 @@ Hash,432bbfd3f8c6bb30c9766bd6645cb1e9429d7d7c77077342a5368836d07d9a73,MalwareBaz
 Hash,26d66fabea48da55d5fc15a9f7ba07c8e0f28cd3050a20fe5b80c5ab94288037,MalwareBazaar,Malware,N/A
 Hash,2eee918b733601dc40afdb72b967fc17bc4f40116a2c05ce17354db441b0d71e,MalwareBazaar,Malware,N/A
 Hash,59f3f709a0dcc11f499c5ef71b4c53ee2ac957bfa1b753e9cde75800fb928438,MalwareBazaar,Malware,N/A
-Hash,394959e5988b228cf80266199200e2b164119466891edbf9949fd4738400eafc,MalwareBazaar,Malware,N/A
-Hash,2f755f9f2b1a12ffe7c059e4469803fc572b469a82128d47ada3c42f4af1526b,MalwareBazaar,Malware,N/A
-Hash,b79813881d0b3e3954b8613c0469899673da3acd0a7fee4979bc6384573ef175,MalwareBazaar,Malware,N/A
-Hash,16e7be40b343930bf5d5e99f1a0edc7aa3f7aa74d953f208af2d14d84848453f,MalwareBazaar,Malware,N/A
-Hash,f7a01d7490b1c9366fa15e1ab5b39d4a026710c498e7d849357eba9035f4b9fb,MalwareBazaar,Malware,N/A
-Hash,59c9225199a7cbab47dec9d348d084cc0f2588c757c09e4d43fdefcdd28290b3,MalwareBazaar,Malware,N/A
-Hash,ffe1a551981da7c449741d3841264b2e0a422429a86eb2e1ce7d62b4b0ed9226,MalwareBazaar,Malware,N/A
-Hash,b8aa4bc537bd773900c3ad03a159e62bc634d3e74790fd103959b9f6277c8490,MalwareBazaar,Malware,N/A
-Hash,a2bb9ca89a8bcc87f276bbb071c245b5e43b4c0d6af0d35c55b64eb017cac50d,MalwareBazaar,Malware,N/A
-Hash,05ce77fd3c04da191ebf3d7a611e5b84d28b870b0116df86b3813642dae57c49,MalwareBazaar,Malware,N/A
-Hash,56cd550c03389454f6123c032e16a839aefdddfc2d0fb299753b01b78e800e35,MalwareBazaar,Malware,N/A
-Hash,ca104b6b76c0360b8abfcb713a5fd8268ecf27cfbaa0980efb92361ac1ecfa73,MalwareBazaar,Malware,N/A
-Hash,d2125299afeb8b9df8967cce407cf2c6facb0cd05cfb5f6ee4faf5c6f0436910,MalwareBazaar,Malware,N/A
-Hash,ddf9f926f4f02ffa8b6bc44e2054b9e3bb9a8d374072ae0ab329f2d89eb9feac,MalwareBazaar,Malware,N/A
-Hash,11586d5368dcaf5e3c6496eec8e1fcab67478ed5cae772d667b64b9a7e4cf12b,MalwareBazaar,Malware,N/A
-Hash,a1a79b2d937169ae2087cea44c20ab424ad4e4b21759e5c3df231e5898310f4e,MalwareBazaar,Malware,N/A
-Hash,5212ff47bdf76ebc24802cbc65843a4c9e2ae549ef8fd1c6e18bcff236e58279,MalwareBazaar,Malware,N/A
-Hash,e9b1b9c9591493551575e756f79938d868d3067eb733166a85896232205cc6bb,MalwareBazaar,Malware,N/A
-Hash,ce34d8d206d8626145030c37277dc1193fb5fdb085fe406c8f05110c00b3896e,MalwareBazaar,Malware,N/A
-Hash,a260a8d525f3878dda593cac457e297c74cd8f401ff2fc075711c33705129d62,MalwareBazaar,Malware,N/A
