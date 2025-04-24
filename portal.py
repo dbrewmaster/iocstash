@@ -2,10 +2,12 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
 from flask_apscheduler import APScheduler
+import requests
 import os
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.exc import IntegrityError
+from werkzeug.middleware.proxy_fix import ProxyFix
 import csv
 from google_auth_oauthlib.flow import Flow
 from google.oauth2 import id_token
@@ -23,7 +25,8 @@ app = Flask(__name__)
 app.config['SESSION_COOKIE_SECURE'] = True
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
-from flask_dance.contrib.google import make_google_blueprint, google
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1)
+
 
 # Google OAuth Configuration
 app.config["GOOGLE_OAUTH_CLIENT_ID"] = "590471980283-au7aeb65jnq31kdvgksq00eramvfou8d.apps.googleusercontent.com"
@@ -76,7 +79,7 @@ def scheduled_ioc_update():
         print("[DEBUG] Scheduled IOC update triggered")
         print("[Scheduler] Updating IOC...")
         try:
-            subprocess.run(["python", "threat.py"])
+            subprocess.Popen(["python3", "threat.py"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             update_ioc()
             print("[⏰] update_ioc() called at:", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         except Exception as e:
@@ -143,6 +146,38 @@ def update_ioc(csv_filepath='iocs_combined.csv'):
         db.session.rollback()
         print(f"Error updating IOC data: {e}")
 
+def get_geo_info(ip):
+    try:
+        # Try ipapi.co first
+        response = requests.get(f"https://ipapi.co/{ip}/json/", timeout=5)
+        data = response.json()
+        print(f"[GeoInfo Raw] {data}")
+        region = data.get("region")
+        country = data.get("country_name")
+
+        if region and country:
+            return region, country
+
+        # Fallback to ipwho.is if ipapi fails
+        response = requests.get(f"https://ipwho.is/{ip}", timeout=5)
+        data = response.json()
+        region = data.get("region") or "Region Not Available"
+        country = data.get("country") or "Country Not Available"
+        return region, country
+
+    except Exception as e:
+        print(f"[GeoInfo Error] {e}")
+        return "Region Not Available", "Country Not Available"
+
+
+
+def get_client_ip():
+    if request.headers.get('X-Forwarded-For'):
+        ip = request.headers.get('X-Forwarded-For').split(',')[0].strip()
+    else:
+        ip = request.remote_addr
+    return ip
+
 # Routes
 @app.route('/', methods=['GET', 'POST'])
 def login():
@@ -196,6 +231,7 @@ def register():
 
     return render_template('register.html')
 
+
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
     if 'username' not in session:
@@ -204,6 +240,13 @@ def dashboard():
     user = User.query.filter_by(username=session['username']).first()
     if not user:
         return redirect(url_for('login'))
+
+    #  Get IP & Geo Info
+    ip_address = get_client_ip()
+    print(f"[DEBUG] IP Address: {ip_address}")
+    region, country = get_geo_info(ip_address)
+    print(f"[DEBUG] Geo Info: Region={region}, Country={country}")
+    print(f"[LOGIN INFO] IP: {ip_address}, Region: {region}, Country: {country}")
 
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
@@ -215,6 +258,7 @@ def dashboard():
         file.save(filepath)
         send_email(user.email, filepath)
         return "File uploaded and emailed successfully"
+
 
     ioc_keyword = request.args.get('ioc_keyword', '').strip()
     page = request.args.get('page', 1, type=int)
@@ -240,7 +284,9 @@ def dashboard():
         types_count=types_count,
         source_counts=source_counts,
         ioc_keyword=ioc_keyword,
-        pagination=ioc_pagination
+        pagination=ioc_pagination,
+        user_region=region,
+        user_country=country
     )
 
 @app.route('/change_password', methods=['GET', 'POST'])
