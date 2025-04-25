@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
+from flask import request
 from flask_apscheduler import APScheduler
 import requests
+import pytz
 import os
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -25,7 +27,7 @@ app = Flask(__name__)
 app.config['SESSION_COOKIE_SECURE'] = True
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
-app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_host=1)
 
 
 # Google OAuth Configuration
@@ -146,28 +148,35 @@ def update_ioc(csv_filepath='iocs_combined.csv'):
         db.session.rollback()
         print(f"Error updating IOC data: {e}")
 
+
 def get_geo_info(ip):
     try:
-        # Try ipapi.co first
+        # Try ipapi.co
         response = requests.get(f"https://ipapi.co/{ip}/json/", timeout=5)
         data = response.json()
-        print(f"[GeoInfo Raw] {data}")
-        region = data.get("region")
-        country = data.get("country_name")
+        print(f"[GeoInfo ipapi.co] {data}")
 
-        if region and country:
-            return region, country
+        region = data.get("region") or "Region Not Available"
+        country = data.get("country_name") or "Country Not Available"
+        timezone = data.get("timezone") or "UTC"
 
-        # Fallback to ipwho.is if ipapi fails
+        if region != "Region Not Available" and country != "Country Not Available":
+            return region, country, timezone
+
+        # Fallback to ipwho.is
         response = requests.get(f"https://ipwho.is/{ip}", timeout=5)
         data = response.json()
+        print(f"[GeoInfo ipwho.is] {data}")
+
         region = data.get("region") or "Region Not Available"
         country = data.get("country") or "Country Not Available"
-        return region, country
+        timezone = data.get("timezone", {}).get("id", "UTC")
+
+        return region, country, timezone
 
     except Exception as e:
         print(f"[GeoInfo Error] {e}")
-        return "Region Not Available", "Country Not Available"
+        return "Region Not Available", "Country Not Available", "UTC"
 
 
 
@@ -244,10 +253,17 @@ def dashboard():
     #  Get IP & Geo Info
     ip_address = get_client_ip()
     print(f"[DEBUG] IP Address: {ip_address}")
-    region, country = get_geo_info(ip_address)
-    print(f"[DEBUG] Geo Info: Region={region}, Country={country}")
+    region, country, user_timezone = get_geo_info(ip_address)
+    print(f"[DEBUG] Geo Info: Region={region}, Country={country}, Timezone={user_timezone}")
     print(f"[LOGIN INFO] IP: {ip_address}, Region: {region}, Country: {country}")
-
+    
+    
+    try:
+        tz = pytz.timezone(user_timezone)
+    except Exception as e:
+        print(f"[Timezone Error] {e}")
+        tz = pytz.utc  # fallback if invalid timezone
+    
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     if request.method == 'POST' and 'file' in request.files:
