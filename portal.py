@@ -42,7 +42,7 @@ google_bp = make_google_blueprint(
         "https://www.googleapis.com/auth/userinfo.email",
         "https://www.googleapis.com/auth/userinfo.profile"
     ],
-    redirect_to="google.authorized",  
+    redirect_to="google.authorized",
     storage=None
 )
 
@@ -217,7 +217,7 @@ def register():
         email = request.form['email']
         first_name = request.form['first_name']
         last_name = request.form['last_name']
-        address = request.form['address']
+        
 
         if User.query.filter_by(username=username).first():
             return "Username already exists!", 400
@@ -229,7 +229,7 @@ def register():
                 email=email,
                 first_name=first_name,
                 last_name=last_name,
-                address=address
+                address="Not Provided"
             )
             db.session.add(new_user)
             db.session.commit()
@@ -256,14 +256,14 @@ def dashboard():
     region, country, user_timezone = get_geo_info(ip_address)
     print(f"[DEBUG] Geo Info: Region={region}, Country={country}, Timezone={user_timezone}")
     print(f"[LOGIN INFO] IP: {ip_address}, Region: {region}, Country: {country}")
-    
-    
+
+
     try:
         tz = pytz.timezone(user_timezone)
     except Exception as e:
         print(f"[Timezone Error] {e}")
         tz = pytz.utc  # fallback if invalid timezone
-    
+
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     if request.method == 'POST' and 'file' in request.files:
@@ -372,7 +372,7 @@ def complete_profile():
             email=session["pending_email"],
             first_name=request.form['first_name'],
             last_name=request.form['last_name'],
-            address=request.form['address']
+            address="Not Provided"
         )
         db.session.add(new_user)
         db.session.commit()
